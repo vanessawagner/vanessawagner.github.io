@@ -3,7 +3,7 @@ published: true
 ---
 ## How to Use Javascript to Use API Data
 
-Today we will work through how to pull API Data into Javascript. In this example, I use the [public API from ImgFlip](https://api.imgflip.com/get_memes) which provides images for memes. 
+We will work through how to pull API Data into Javascript. In this example, I use the [public API from ImgFlip](https://api.imgflip.com/get_memes) which provides images for memes. The end goal is to be able to flip through the images with two buttons, next and previous.
 
 ### Fetching API Data
 
@@ -16,34 +16,37 @@ async function getMEME() {
         
 ```
 
-Complete data and grab the data in the body of the response. We need to read that data and store it in a format that we can work with (text, image data coming as a blob, array, JSON or Javascript Object Notation). Finally, you will need to call that function to display the API array of data.  
+Complete data and grab the data in the body of the response. We need to read that data and store it in a format that we can work with (this can be in the form of text, image data, array, JSON or Javascript Object Notation). Finally, you will need to call that function to display the API array of data.  
 
 
 ```
 async function getMEME() {
         const response = await fetch(`https://api.imgflip.com/get_memes`);
-        const data = await response.json();
+        const memedata = await response.json();
         }
 getMEME()
 ```
 <img src="https://i.imgflip.com/19ijp6.jpg" width="100">
 
-You'll notice in the array from the ImgFlip API has a drill-down of data -> memes -> an array of objects. Within each object, we have the `object keys`: id, name, url, width, and height. 
+You'll notice in the `memedata` array from the ImgFlip API has a drill-down of data -> memes -> an array of objects. Within each object, we have the `object keys`: id, name, url, width, and height. Since we will be interested in the url key, this drill-down becomes `memedata.data.memes.url`.
 ![Meme Array from API]({{site.baseurl}}/_posts/Meme Array Snip.PNG)
 
 ### Connecting URL Data to HTML
 
-We are interested in using the url and displaying an image in the DOM Element with that data. To do this, we need to connect our html to the javascript.
+We are interested in using the url `key` and displaying an image in the DOM Element with that data. To do this, we need to connect our HTML to the javascript. [i] where `i` is the index. Remember, the first index of an array is zero, not one.
 
 ```
 HTML:
-<img src="" id="image" width="300px">
+<img src="" id="image" width="500px">
 
 Javascript:
 var i = 0;
-memeCurrent = data.data.memes[i]
+memeCurrent = memedata.data.memes[i]
 image.src = memeCurrent.url
 ```
+
+### Check out the full code here:
+https://github.com/vanessawagner/phase-1-final-project
 
 
 
