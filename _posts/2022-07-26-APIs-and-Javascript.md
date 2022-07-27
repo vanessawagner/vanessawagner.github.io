@@ -26,24 +26,44 @@ async function getMEME() {
         }
 getMEME()
 ```
-<img src="https://i.imgflip.com/19ijp6.jpg" width="100">
+<img src="https://i.imgflip.com/19ijp6.jpg" width="300">
 
 You'll notice in the `memedata` array from the ImgFlip API has a drill-down of data -> memes -> an array of objects. Within each object, we have the `object keys`: id, name, url, width, and height. Since we will be interested in the url key, this drill-down becomes `memedata.data.memes.url`.
 ![Meme Array from API]({{site.baseurl}}/_posts/Meme Array Snip.PNG)
 
 ### Connecting URL Data to HTML
 
-We are interested in using the url `key` and displaying an image in the DOM Element with that data. To do this, we need to connect our HTML to the javascript. [i] where `i` is the index. Remember, the first index of an array is zero, not one.
+We are interested in using the url `key` and displaying an image in the DOM Element with that data. To do this, we need to connect our HTML to the javascript. Since we will be adding a button feature to work forward and backwards through the array, I will be using [i] as a placeholder where `i` is the index. For this part, only the first meme will display. Remember, the first index of an array is zero, not one.
 
 ```
 HTML:
-<img src="" id="image" width="500px">
+<img src="" id="image" width="300px">
 
 Javascript:
 var i = 0;
 memeCurrent = memedata.data.memes[i]
 image.src = memeCurrent.url
 ```
+
+### Adding a Next Button
+
+To add a button, we will need to add an Event Listener which responds to a mouse `'click'`. We simply want it to start at `i = 0` which we claimed above and step through at each click by `i + 1` otherwise denoted as `i++`. I will call this button with a `button id` of "increment" and add the function as follows:
+
+```
+HTML:
+button id="increment">next</button>
+
+Javascript:
+increment.addEventListener('click', function() {
+            i++
+            memeCurrent = data.data.memes[i]
+            image.src = memeCurrent.url
+            }
+```
+            
+Voila! You should be able to click forward through the array and display images. See if you can make a previous button to move backwards through the array and display the previous image!
+
+![BrowseImages.gif]({{site.baseurl}}/_posts/BrowseImages.gif)
 
 ### Check out the full code here:
 https://github.com/vanessawagner/phase-1-final-project
