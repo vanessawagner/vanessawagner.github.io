@@ -27,15 +27,23 @@ async function getMEME() {
 getMEME()
 ```
 
+![That's So Fetch]({{site.baseurl}}/_posts/19ijp6.jpg)
 
+You'll notice in the array from the ImgFlip API has a drill-down of data -> memes -> an array of objects. Within each object, we have the `object keys`: id, name, url, width, and height. 
 ![Meme Array from API]({{site.baseurl}}/_posts/Meme Array Snip.PNG)
 
-Make an img as a url into the DOM Element with that data.
+We are interested in using the url and displaying an image in the DOM Element with that data. To do this, we need to connect our html to the javascript.
 
 ```
-test code
+HTML:
+<img src="" id="image" width="300px">
+
+Javascript:
+var i = 0;
+memeCurrent = data.data.memes[i]
+image.src = memeCurrent.url
 ```
 
 
 
-![That's So Fetch]({{site.baseurl}}/_posts/19ijp6.jpg)
+
