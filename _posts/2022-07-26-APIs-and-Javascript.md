@@ -26,7 +26,7 @@ async function getMEME() {
         }
 getMEME()
 ```
-<img src="https://imgflip.com/memetemplate/76448058/That-is-so-fetch" width="100" height="100">
+<img src="https://i.imgflip.com/19ijp6.jpg" width="100">
 
 You'll notice in the array from the ImgFlip API has a drill-down of data -> memes -> an array of objects. Within each object, we have the `object keys`: id, name, url, width, and height. 
 ![Meme Array from API]({{site.baseurl}}/_posts/Meme Array Snip.PNG)
