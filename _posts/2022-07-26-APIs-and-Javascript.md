@@ -29,7 +29,11 @@ getMEME()
 <img src="https://i.imgflip.com/19ijp6.jpg" width="300">
 
 You'll notice in the `memedata` array from the ImgFlip API has a drill-down of data -> memes -> an array of objects. Within each object, we have the `object keys`: id, name, url, width, and height. Since we will be interested in the url key, this drill-down becomes `memedata.data.memes.url`.
-![Meme Array from API]({{site.baseurl}}/_posts/Meme Array Snip.PNG)
+![{{Meme Array from API}}]("{{site.baseurl | /_posts/Meme Array Snip.PNG }}")
+[{{Meme Array from API}}]("{{site.baseurl | /_posts/Meme Array Snip.PNG }}")
+![{{Meme Array from API.title}}]("{{site.baseurl | /_posts/Meme Array Snip.PNG }}")
+[{{Meme Array from API.title}}]("{{site.baseurl | /_posts/Meme Array Snip.PNG }}")
+[{{ page.title }}]("{{ page.url | relative_url }}")
 
 ### Connecting URL Data to HTML
 
@@ -67,7 +71,3 @@ Voila! You should be able to click forward through the array and display images.
 
 ### Check out the full code here:
 https://github.com/vanessawagner/phase-1-final-project
-
-
-
-
