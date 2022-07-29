@@ -5,6 +5,13 @@ published: true
 
 We will work through how to pull API Data into Javascript. In this example, I use the [public API from ImgFlip](https://api.imgflip.com/get_memes) which provides images for memes. The end goal is to be able to flip through the images with two buttons, next and previous.
 
+## What Exactly Are APIs?
+If you are a programmer, you will likely come across APIs, or Application Programmable Interface. They are crucial for different apps and services to exchange information. APIs can be used to get information through third party services. For example, when you use the weather app on an iPhone, Apple has not gone out to place thermometers around the world, but instead uses The Weather Channel API. 
+
+<img src="https://www.iphonefaq.org/archives/975978" width="300">
+
+Similarily, I'll be using ImgFlip's API to access the library of images as a basis for a Single Page Application. With this tool, I will be able to pull or `fetch` the data into my application without the need for storing it locally.
+
 ### Fetching API Data
 
 First, we use the fetch function with an argument identifying the path to the resource, our API. Next, we need to work with the response which is a stream of data that returns a promise. We can do these two steps simply by using `async` and `await`. Because `fetch` is an asynchronous, we need add `await` to wait on the fetch result to store it in our variable which I will call `response`. 
@@ -29,11 +36,7 @@ getMEME()
 <img src="https://i.imgflip.com/19ijp6.jpg" width="300">
 
 You'll notice in the `memedata` array from the ImgFlip API has a drill-down of data -> memes -> an array of objects. Within each object, we have the `object keys`: id, name, url, width, and height. Since we will be interested in the url key, this drill-down becomes `memedata.data.memes.url`.
-![{{Meme Array from API}}]("{{site.baseurl | /_posts/Meme Array Snip.PNG }}")
-[{{Meme Array from API}}]("{{site.baseurl | /_posts/Meme Array Snip.PNG }}")
-![{{Meme Array from API.title}}]("{{site.baseurl | /_posts/Meme Array Snip.PNG }}")
-[{{Meme Array from API.title}}]("{{site.baseurl | /_posts/Meme Array Snip.PNG }}")
-[{{ page.title }}]("{{ page.url | relative_url }}")
+![Meme Array from API]({{site.baseurl | /_posts/Meme Array Snip.PNG)
 
 ### Connecting URL Data to HTML
 
