@@ -8,7 +8,7 @@ We will work through how to pull API Data into Javascript. In this example, I us
 ### What Exactly Are APIs?
 If you are a programmer, you will likely come across APIs, or Application Programmable Interface. They are crucial for different apps and services to exchange information. APIs can be used to get information through third party services. For example, when you use the weather app on an iPhone, Apple has not gone out to place thermometers around the world, but instead uses The Weather Channel API. 
 
-<img src="https://www.iphonefaq.org/archives/975978" width="300">
+<img src="https://www.iphonefaq.org/files/styles/large/public/weather-a.png?itok=z9mO6Dhm" width="300">
 
 Similarily, I'll be using ImgFlip's API to access the library of images as a basis for a Single Page Application. With this tool, I will be able to pull or `fetch` the data into my application without the need for storing it locally.
 
