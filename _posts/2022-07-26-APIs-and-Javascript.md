@@ -37,7 +37,8 @@ getMEME()
 
 You'll notice in the `memedata` array from the ImgFlip API has a drill-down of data -> memes -> an array of objects. Within each object, we have the `object keys`: id, name, url, width, and height. Since we will be interested in the url key, this drill-down becomes `memedata.data.memes.url`.
 
-![]({{site.baseurl}}/_posts/Meme%20Array%20Snip.PNG)
+![Meme Array Snip](https://user-images.githubusercontent.com/52802563/182560207-dac9343a-8268-4e2a-85e4-12ce80bcd1c4.PNG)
+
 
 ### Connecting URL Data to HTML
 
@@ -71,7 +72,7 @@ increment.addEventListener('click', function() {
             
 Voila! You should be able to click forward through the array and display images. See if you can make a previous button to move backwards through the array and display the previous image!
 
-![BrowseImages.gif]({{site.baseurl}}/_posts/BrowseImages.gif)
+![BrowseImages](https://user-images.githubusercontent.com/52802563/182560496-03fac5a2-0296-4710-b842-8321d5201296.gif)
 
 ### Check out the full code here:
 https://github.com/vanessawagner/phase-1-final-project
