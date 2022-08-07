@@ -12,8 +12,8 @@ App
 
 ### Right: Suggested Video
 
-![John Butler Component](https://user-images.githubusercontent.com/52802563/183314029-f7994dce-e6ec-4135-9e6a-453319a82576.PNG)
+<img src="https://user-images.githubusercontent.com/52802563/183314029-f7994dce-e6ec-4135-9e6a-453319a82576.PNG" width="400">
 
-If you take a look at the right hand side of the screen, you'll see the suggested video pane. You can keep scrolling down and more videos will populate. This component can be treated as a list. You'll also notice that within this component, you can see there is an iteration of a same type of component in the form of a card. A way to handle this list is to iterate in a for loop. 
+If you take a look at the right hand side of the screen, you'll see the suggested video pane. You can keep scrolling down and more videos will populate. This component can be treated as a list. You'll also notice that within this component, you can see there is an iteration of a same type of component in the form of a card. There is a screenshot of the video, the video title, the Youtuber username, how many views, and when it was published. A way to handle this list is to iterate in a for loop. 
 
 
