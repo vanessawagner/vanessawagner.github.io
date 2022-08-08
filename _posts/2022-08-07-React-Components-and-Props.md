@@ -111,4 +111,31 @@ export default function App() {
 
 ```  
 
-## Props Destructuring
+We can further scrub this code from repeating props by using destructuring. Instead of using an object called `props`, we can use the `username` and `comment` objects:
+      
+```
+import React from 'react';
+
+function Card(username, comment) {
+  return (
+    <div>
+      <div>
+        <h1>{username}</h1>
+        <h2>{comment}</h2>
+      </div>
+   );
+}
+
+export default function App() {
+  return (
+    <div>
+      <Card username="Matthew Encina", comment="This is so lovely. Thanks for sharing."/>
+      <Card username="Phillip Cortez", comment="Finding someone who can vibe with me with this type of music would be everything I need"/>
+      <Card username="sonnenblume", comment="FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)"/>
+    </div>
+  );
+}
+
+```  
+
+I hope this helps with a basic understanding of Components and Props and how they are helpful whenever a new comment is being generated on a Youtube video!
