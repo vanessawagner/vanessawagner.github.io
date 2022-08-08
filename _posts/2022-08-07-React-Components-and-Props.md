@@ -41,9 +41,30 @@ If we build on the Youtube comment component section and disect each comment "ca
 ![Comments](https://user-images.githubusercontent.com/52802563/183325063-26d8c376-c9e8-470a-a168-922e1ceef83a.PNG)
 
 ```
-{username: 'Matthew Encina', comment: 'This is so lovely. Thanks for sharing.', likes: 3000, replies: 18},
-{username: 'Phillip Cortez', comment: 'Finding someone who can vibe with me with this type of music would be everything I need', likes: 1100, replies: 27},
-{username: 'sonnenblume', comment: 'FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)', likes: 2200, replies: 24}
+Main.js
+
+import { useState } from 'react';
+
+const Main = () => {
+  const [comments, setComments ] = useState([
+    {username: 'Matthew Encina', comment: 'This is so lovely. Thanks for sharing.', likes: 3000, replies: 18},
+    {username: 'Phillip Cortez', comment: 'Finding someone who can vibe with me with this type of music would be everything I need', likes: 1100, replies: 27},
+    {username: 'sonnenblume', comment: 'FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)', likes: 2200, replies: 24}
+    ]);
+    
+    return (
+      <div className="main">
+        {comments.map((comment) => (
+          <div className="comment" key={comment.id}>
+            <h2>{ comment.username} </h2>
+            <p>{ comment.comment }</p>
+            <p> {comment.likes}</p>
+            <h2>{ comment.replies }</h2>
+           </div>
+         ))}
+         </div>
+      );
+}
 ```
 
 Props is short for properties, which hold data. 
