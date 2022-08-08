@@ -64,34 +64,27 @@ export default function App() {
    )}
 ```
 
-You'll see that with each comment card, the code becomes repetitive. It becomes even more tedious when you have to make a change like if you wanted to make each username bold, you would have to go into each comment and bold out the username. 
+You'll see that with each comment card, the code becomes repetitive. It becomes even more tedious when you have to make a change like if you wanted to make each username bold, you would have to go into each comment and bold out the username. Lets create a function called Card and compile all the comment information in a JSX. 
 
 ```
-import React from 'react';
-
 function Card() {
-  return (
-    <div>
-      <div>
-        <h1>Matthew Encina</h1>
-        <h2>This is so lovely. Thanks for sharing.</h2>
-      </div>
-   );
+  return
 }
 
 export default function App() {
   return (
     <div>
-      <Card username="Matthew Encina", comment="This is so lovely. Thanks for sharing.", likes=3000, replies=18/>
-      <Card username="Phillip Cortez", comment="Finding someone who can vibe with me with this type of music would be everything I need", likes=1100, replies=27/>
-      <Card username="sonnenblume", comment="FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)", likes=2200, replies=24/>
+      <Card username="Matthew Encina", comment="This is so lovely. Thanks for sharing."/>
+      <Card username="Phillip Cortez", comment="Finding someone who can vibe with me with this type of music would be everything I need"/>
+      <Card username="sonnenblume", comment="FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)"/>
     </div>
   );
 }
-
 ```
 
-What you'll notice is with <Card username="Matthew Encina" comment="This is so lovely. Thanks for sharing." likes=3000, replies=18>, we are creating an object with properties `username`, `comment`, `likes`, `replies`. To receive these objects in the function, we have to use an object called `props` in the Card function. Props is short for properties are what hold data. See how it simplifies the code by removing the repetition.
+So how do we connect the function and the JSX? This is where props come into play. Functions take in an argument called props, and returns the JSX. 
+
+What you'll notice is with <Card username="Matthew Encina" comment="This is so lovely. Thanks for sharing.">, we are creating an object with properties `username` and `comment`. To receive these objects in the function, we have to use an object called `props` in the Card function. Props is short for properties are what hold data. See how it simplifies the code by removing the repetition.
 
 ```
 import React from 'react';
@@ -109,26 +102,13 @@ function Card(props) {
 export default function App() {
   return (
     <div>
-      <Card username="Matthew Encina", comment="This is so lovely. Thanks for sharing.", likes=3000, replies=18/>
-      <Card username="Phillip Cortez", comment="Finding someone who can vibe with me with this type of music would be everything I need", likes=1100, replies=27/>
-      <Card username="sonnenblume", comment="FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)", likes=2200, replies=24/>
+      <Card username="Matthew Encina", comment="This is so lovely. Thanks for sharing."/>
+      <Card username="Phillip Cortez", comment="Finding someone who can vibe with me with this type of music would be everything I need"/>
+      <Card username="sonnenblume", comment="FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)"/>
     </div>
   );
 }
 
 ```  
-  
-
-
-### How Do You Create a React Component?
-
-Lets take the Comments component from the Youtube example above and build a simple version in React, but before we begin, you should know a couple of rules:
-1. A functional component must return JSX.
-2. Functions takes in one argument called props.
-
-
-
-
-
 
 ## Props Destructuring
