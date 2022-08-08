@@ -61,12 +61,64 @@ export default function App() {
         <h2>FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)</h2>
       </div>
     </div>
-   )
+   )}
 ```
 
 You'll see that with each comment card, the code becomes repetitive. It becomes even more tedious when you have to make a change like if you wanted to make each username bold, you would have to go into each comment and bold out the username. 
 
-Props is short for properties, which hold data. 
+```
+import React from 'react';
+
+function Card() {
+  return (
+    <div>
+      <div>
+        <h1>Matthew Encina</h1>
+        <h2>This is so lovely. Thanks for sharing.</h2>
+      </div>
+   );
+}
+
+export default function App() {
+  return (
+    <div>
+      <Card username="Matthew Encina", comment="This is so lovely. Thanks for sharing.", likes=3000, replies=18/>
+      <Card username="Phillip Cortez", comment="Finding someone who can vibe with me with this type of music would be everything I need", likes=1100, replies=27/>
+      <Card username="sonnenblume", comment="FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)", likes=2200, replies=24/>
+    </div>
+  );
+}
+
+```
+
+What you'll notice is with <Card username="Matthew Encina" comment="This is so lovely. Thanks for sharing." likes=3000, replies=18>, we are creating an object with properties `username`, `comment`, `likes`, `replies`. To receive these objects in the function, we have to use an object called `props` in the Card function. Props is short for properties are what hold data. See how it simplifies the code by removing the repetition.
+
+```
+import React from 'react';
+
+function Card(props) {
+  return (
+    <div>
+      <div>
+        <h1>{props.username}</h1>
+        <h2>{props.comment}</h2>
+      </div>
+   );
+}
+
+export default function App() {
+  return (
+    <div>
+      <Card username="Matthew Encina", comment="This is so lovely. Thanks for sharing.", likes=3000, replies=18/>
+      <Card username="Phillip Cortez", comment="Finding someone who can vibe with me with this type of music would be everything I need", likes=1100, replies=27/>
+      <Card username="sonnenblume", comment="FKJs Music is such a safe space for me. To me its the soundtrack of being alone and enjoying every wecond....sooooo comforting :)", likes=2200, replies=24/>
+    </div>
+  );
+}
+
+```  
+  
+
 
 ### How Do You Create a React Component?
 
