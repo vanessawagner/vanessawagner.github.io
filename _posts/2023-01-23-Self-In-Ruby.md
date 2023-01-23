@@ -30,14 +30,25 @@ CHECK: Check what was this method called on?
 
 TIP: If the first line of the method starts with def… if it is self.(dot) it must be a class method. So if you are there, self is a class. If it does not have a self dot in front of the def it is an instance method, self must be an instance.
 
+An example of class method:
 ```
-class Elf
+class Country
     def self.class_method
         puts "This is a class method."
     end
 end
 
-Elf.class_method #"This is a class method."
+Country.class_method #This prints "This is a class method."
+        
+```
+
+An example of instance method:
+```
+require 'pry'
+ecuador = Country.new_from_hash({name: "Ecuador", continent: "South America"})
+binding.pry
+
+#when you call this in pry, you will see a particular instance of the Country class. Country.new_from_hash is a class method that goes into your country.rb file and self.new creates a new instance and initailizes on that new instance. When you initialize the name, ecuador, it returns self.
         
 ```
 
@@ -45,10 +56,7 @@ Elf.class_method #"This is a class method."
 
 The class is a blueprint for the actions and properties of a given instance. An instance is a unique object created from the class blueprint. A method is a behavior.
 
+Hopefully this was helpful in driving home the idea of self, class, and methods in Ruby! 
 
 
-<img src="https://i.imgflip.com/19ijp6.jpg" width="300">
-
-
-### Check out the full code here:
-https://github.com/vanessawagner/phase-1-final-project
+<img src="https://media.tenor.com/0ZfvvMFHDasAAAAC/beyourself-be.gif" width="300">
