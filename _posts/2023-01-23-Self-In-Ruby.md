@@ -11,11 +11,11 @@ Truths can be used to specifically reference properties and methods of a class o
 
 Falsies 
 
-class methods and variables can reference individual objects. FALSE
-Self does not change based on context. False - THEY DO!
-Self is never implicitly called by ruby - FALSE
+- class methods and variables can reference individual objects. This is FALSE
+- Self does not change based on context. This is False - THEY DO!
+- Self is never implicitly called by ruby - This is FALSE
 
-Before I dive into explaining self, I will explain class methods and variables. 
+Before I dive into explaining self, let me back up and explain class methods and variables. 
 
 ### What are class methods and variables?
 Class methods and variables reference the entire class. A class is basically a template for all objects or instances of that class. This is otherwise known as what attributes do the class have (ie what does a child look like?) and what methods can I call on it to be able to manipulate it to a specific instance. 
@@ -66,11 +66,24 @@ When you call this in pry, you will see a particular instance of the Country cla
 #<Country:0x001g1542658753 @name="Ecuador" @continent="South America">
 ```
 
+Class variables are created using @@. You might have a bunch of countries that you want to store in a collector file using something like @@all = []. You can access the latest country you are currently initailizing using self. 
+
+So, if you want to create a class method so you can use Country.all to get all the countries and use self to tell it that it is a class method. 
+
+```
+def self.all
+    @@all
+end
+```
+You are relying on the implicit return to force evaluation of the @@all which is the last line or Ruby and allows you to rely on that implicit return feature.
+
 ### Classes, Instances and Methods
 
-The class is a blueprint for the actions and properties of a given instance. An instance is a unique object created from the class blueprint. A method is a behavior.
+The class is a blueprint for the actions and properties of a given instance. An instance is a unique object created from the class blueprint. A method, on the other hand, is a behavior.
 
-Hopefully this was helpful in driving home the idea of self, class, and methods in Ruby! 
+Hopefully this was helpful in driving home the idea of self, class, and methods in Ruby! Remember, self in Ruby allows you to access the current object. When you call a method without explicitly receiving an object, the method is implicitly called on self. 
+
+If you have more examples of when you might use self, feel free to leave a comment.
 
 
 <img src="https://media.tenor.com/0ZfvvMFHDasAAAAC/beyourself-be.gif" width="300">
