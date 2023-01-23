@@ -19,6 +19,13 @@ Class methods and variables reference the entire class. A class is basically a t
 TIP: It is important to note that you have to call a class method on a class. If you call a class method on an install of the class, it will throw an error (NoMethodError). When you get this error, look at what you are calling it on. This will only occur when you are calling a class method on an instance or an instance method on a class. 
 
 
+### What is Self and how do you know what the context is?
+Self is referring to the object of the context. If you are inside of an method, self is what it is called on. So, if it is an instance method, it was called on an instance. 
+
+CHECK: Check what was this method called on? 
+
+TIP: If the first line of the method starts with def… if it is self.(dot) it must be a class method. So if you are there, self is a class. If it does not have a self dot in front of the def it is an instance method, self must be an instance.
+
 ```
 async function getMEME() {
         const response = await fetch(`https://api.imgflip.com/get_memes`);
