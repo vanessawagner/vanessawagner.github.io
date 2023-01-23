@@ -20,7 +20,18 @@ Before I dive into explaining self, I will explain class methods and variables.
 ### What are class methods and variables?
 Class methods and variables reference the entire class. A class is basically a template for all objects or instances of that class. This is otherwise known as what attributes do the class have (ie what does a child look like?) and what methods can I call on it to be able to manipulate it to a specific instance. 
 
-TIP: It is important to note that you have to call a class method on a class. If you call a class method on an install of the class, it will throw an error (NoMethodError). When you get this error, look at what you are calling it on. This will only occur when you are calling a class method on an instance or an instance method on a class. 
+TIP: It is important to note that you have to call a class method on a class. If you call a class method on an install of the class, it will throw an error (NoMethodError). When you get this error, look at what you are calling it on. This will only occur when you are calling a class method on an instance or an instance method on a class.
+
+An example of this error:
+
+```
+country = Country.new("Ecuador")
+c country.self
+
+NoMethodError: undefined method `self' for #<Country:0x001g1542658753 @name="Ecuador" @continent="South America"">
+```
+
+
 
 
 ### What is Self and how do you know what the context is?
@@ -47,9 +58,12 @@ An example of instance method:
 require 'pry'
 ecuador = Country.new_from_hash({name: "Ecuador", continent: "South America"})
 binding.pry
-
-#when you call this in pry, you will see a particular instance of the Country class. Country.new_from_hash is a class method that goes into your country.rb file and self.new creates a new instance and initailizes on that new instance. When you initialize the name, ecuador, it returns self.
         
+```
+When you call this in pry, you will see a particular instance of the Country class. Country.new_from_hash is a class method that goes into your country.rb file and self.new creates a new instance and initailizes on that new instance. When you initialize the name, ecuador, it returns self. The output should look something like:
+
+```
+#<Country:0x001g1542658753 @name="Ecuador" @continent="South America">
 ```
 
 ### Classes, Instances and Methods
