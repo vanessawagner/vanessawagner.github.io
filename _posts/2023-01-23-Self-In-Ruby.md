@@ -31,22 +31,22 @@ CHECK: Check what was this method called on?
 TIP: If the first line of the method starts with def… if it is self.(dot) it must be a class method. So if you are there, self is a class. If it does not have a self dot in front of the def it is an instance method, self must be an instance.
 
 ```
-async function getMEME() {
-        const response = await fetch(`https://api.imgflip.com/get_memes`);
-        }
+class Elf
+    def self.class_method
+        puts "This is a class method."
+    end
+end
+
+Elf.class_method #"This is a class method."
         
 ```
 
-Complete data and grab the data in the body of the response. We need to read that data and store it in a format that we can work with (this can be in the form of text, image data, array, JSON or Javascript Object Notation). Finally, you will need to call that function to display the API array of data.  
+### Classes, Instances and Methods
+
+The class is a blueprint for the actions and properties of a given instance. An instance is a unique object created from the class blueprint. A method is a behavior.
 
 
-```
-async function getMEME() {
-        const response = await fetch(`https://api.imgflip.com/get_memes`);
-        const memedata = await response.json();
-        }
-getMEME()
-```
+
 <img src="https://i.imgflip.com/19ijp6.jpg" width="300">
 
 
