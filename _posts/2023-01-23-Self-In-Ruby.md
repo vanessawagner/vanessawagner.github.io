@@ -4,9 +4,13 @@ published: true
 ## An Intro to Self in Ruby
 
 Self can be very difficult to understand as a beginner using Ruby because it changes based on the context and it is not always explicitly shown in the code. A few high level things to note: 
+
 SELFS
+
 Truths can be used to specifically reference properties and methods of a class or object (instance). You can use it to solve class-level problems.
+
 Falsies 
+
 class methods and variables can reference individual objects. FALSE
 Self does not change based on context. False - THEY DO!
 Self is never implicitly called by ruby - FALSE
